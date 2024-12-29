@@ -1,0 +1,100 @@
+body {
+    background: #FFC107;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+/* Transparent Navbar */
+.transparent-navbar {
+    background: transparent !important;
+    transition: background 0.3s ease-in-out;
+    z-index: 10;
+}
+
+.transparent-navbar.sticky-top.scrolled {
+    background: rgba(0, 0, 0, 0.8); /* Adds a slight background when scrolling */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Links Styling */
+.transparent-navbar .nav-link {
+    font-size: 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.transparent-navbar .nav-link:hover {
+    color: #f9c74f; /* Highlight color for links */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.526), rgba(0, 0, 0, 0.526)), 
+                url('images/hero.avif') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.form-container {
+    position: relative;
+    width: 900px;
+    height: 500px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.btn{
+    border-radius:20px;
+}
+.form-box {
+    position: absolute;
+    box-shadow: 10px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.login-box {
+    transform: translateX(0);
+    z-index: 1;
+    background: #ffffff;
+}
+
+.register-box {
+    transform: translateX(100%);
+    z-index: 0;
+    background: #ffffff;
+}
+
+.image-box {
+    width: 50%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.form-content {
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.active .login-box {
+    transform: translateX(-100%);
+}
+
+.active .register-box {
+    transform: translateX(0);
+}
